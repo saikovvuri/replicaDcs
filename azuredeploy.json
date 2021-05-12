@@ -1,5 +1,5 @@
 {
-  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
     "dcPrefix": {
@@ -44,8 +44,11 @@
         "description": "First domain controller local admin password"
       }
     },
-    "ipAddresses": {
-      "type": "array"
+     "dnsIpAddresses": {
+      "type": "array",
+      "metadata": {
+        "description": "IP addresses of primary DNS typically from on-prem network"
+      }
     },
     "winOSVer": {
       "type": "string",
@@ -111,7 +114,8 @@
       "type": "securestring",
       "metadata": {
         "description": "Auto-generated token to access _artifactsLocation"
-      }
+      },
+      "defaultValue": ""
     }
   },
   "variables": {
@@ -147,14 +151,18 @@
           {
             "name": "ipconfig1",
             "properties": {
-              "privateIPAllocationMethod": "Static",
-              "privateIPAddress": "[parameters('ipAddresses')[copyIndex()]]",
+              "privateIPAllocationMethod": "Dynamic",
               "subnet": {
                 "id": "[variables('subRef')]"
               }
             }
           }
-        ]
+        ],
+        "dnsSettings": {
+          "dnsServers": [
+            "[parameters('dnsIpAddresses')[copyIndex()]]"
+          ]
+        }
       }
     },
     {

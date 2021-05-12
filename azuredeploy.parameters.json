@@ -8,7 +8,7 @@
     "locAdminUserName": {
       "reference": {
         "keyVault": {
-          "id": "/subscriptions/9f27316b-43a0-4f1b-9449-3d798ebdd43f/resourceGroups/keyVault/providers/Microsoft.KeyVault/vaults/kv-6e6dnpt2p5fxi"
+          "id": "/subscriptions/c25403ab-e4c7-428a-be74-ed54e1688283/resourceGroups/replica-dcs/providers/Microsoft.KeyVault/vaults/sharedservices-secrets"
         },
         "secretName": "local-admin"
       }
@@ -20,11 +20,11 @@
         },
         "secretName": "local-admin-pw"
       }
-    },
-    "ipAddresses": {
+    },   
+    "dnsIpAddresses": {
       "value": [
-        "10.1.1.29",
-        "10.1.1.30"
+        "10.0.1.29",
+        "10.0.1.30"
       ]
     },
     "winOSVer": {
@@ -51,7 +51,7 @@
     "domainAdminPassword": {
       "reference": {
         "keyVault": {
-          "id": "/subscriptions/9f27316b-43a0-4f1b-9449-3d798ebdd43f/resourceGroups/keyVault/providers/Microsoft.KeyVault/vaults/kv-6e6dnpt2p5fxi"
+          "id": "/subscriptions/c25403ab-e4c7-428a-be74-ed54e1688283/resourceGroups/replica-dcs/providers/Microsoft.KeyVault/vaults/sharedservices-secrets"
         },
         "secretName": "domain-admin-pw"
       }
@@ -59,7 +59,7 @@
     "domainAdminUsername": {
       "reference": {
         "keyVault": {
-          "id": "/subscriptions/9f27316b-43a0-4f1b-9449-3d798ebdd43f/resourceGroups/keyVault/providers/Microsoft.KeyVault/vaults/kv-6e6dnpt2p5fxi"
+          "id": "/subscriptions/c25403ab-e4c7-428a-be74-ed54e1688283/resourceGroups/replica-dcs/providers/Microsoft.KeyVault/vaults/sharedservices-secrets"
         },
         "secretName": "domain-admin"
       }
